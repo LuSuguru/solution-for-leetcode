@@ -9,13 +9,13 @@
  * @param {number} x
  * @return {number}
  */
-var reverse = function (x) {
+const reverse = function (x) {
   const str = x + ''
   const strArr = str.match(/\d/g)
 
   let newNum = 0
   for (let i = 0; i < strArr.length; i++) {
-    newNum = newNum + 10 ** i * strArr[i]
+    newNum += 10 ** i * strArr[i]
   }
 
   if (x < 0) {
@@ -27,6 +27,5 @@ var reverse = function (x) {
   }
 
   return newNum
-};
+}
 // @lc code=end
-

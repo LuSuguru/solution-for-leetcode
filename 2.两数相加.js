@@ -22,7 +22,7 @@ const createNewNode = () => ({
   next: null
 })
 
-var addTwoNumbers = function (l1, l2) {
+const addTwoNumbers = function (l1, l2) {
   // 合计的链表
   let plusNode = null
 
@@ -49,7 +49,8 @@ var addTwoNumbers = function (l1, l2) {
     currentl2 = currentl2 ? currentl2.next : null
 
     if (!currentPlus) {
-      currentPlus = plusNode = newPlusNode
+      currentPlus = newPlusNode
+      plusNode = newPlusNode
     } else {
       currentPlus.next = newPlusNode
       currentPlus = newPlusNode
@@ -57,6 +58,5 @@ var addTwoNumbers = function (l1, l2) {
   }
 
   return plusNode
-};
+}
 // @lc code=end
-

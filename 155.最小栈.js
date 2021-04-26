@@ -11,18 +11,18 @@
  * [155] 最小栈
  */
 
-const { CHAR_0 } = require("picomatch/constants");
+const { CHAR_0 } = require('picomatch/constants')
 
 // @lc code=start
 /**
  * initialize your data structure here.
  */
-var MinStack = function () {
+const MinStack = function () {
   this.stack = []
   this.minStack = []
-};
+}
 
-/** 
+/**
  * @param {number} val
  * @return {void}
  */
@@ -33,7 +33,7 @@ MinStack.prototype.push = function (val) {
   if (min === undefined || val <= min) {
     this.minStack.unshift(val)
   }
-};
+}
 
 /**
  * @return {void}
@@ -44,7 +44,7 @@ MinStack.prototype.pop = function () {
   if (min === current) {
     this.minStack.shift()
   }
-};
+}
 
 /**
  * @return {number}
@@ -52,14 +52,14 @@ MinStack.prototype.pop = function () {
 MinStack.prototype.top = function () {
   const { stack } = this
   return stack[stack.length - 1]
-};
+}
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function () {
   return this.minStack[0]
-};
+}
 
 /**
  * Your MinStack object will be instantiated and called as such:
@@ -70,4 +70,3 @@ MinStack.prototype.getMin = function () {
  * var param_4 = obj.getMin()
  */
 // @lc code=end
-

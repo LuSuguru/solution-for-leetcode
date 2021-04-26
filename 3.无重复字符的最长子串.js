@@ -13,12 +13,12 @@
 
 // @lc code=start
 /**
- * 
+ *
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
-  let map = {} // 存放子串每个字符的位置
+const lengthOfLongestSubstring = function (s) {
+  const map = {} // 存放子串每个字符的位置
 
   // two-pointers 和 sliding-window
   let start = -1 // 开始位置
@@ -36,7 +36,5 @@ var lengthOfLongestSubstring = function (s) {
   }
 
   return maxLength
-};
+}
 // @lc code=end
-
-

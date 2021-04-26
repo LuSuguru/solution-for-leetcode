@@ -1,0 +1,28 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.两数之和.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuSuguru/solution-for-leetcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuSuguru/solution-for-leetcode/issues"
+  },
+  "homepage": "https://github.com/LuSuguru/solution-for-leetcode#readme",
+  "dependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2"
+  }
+}

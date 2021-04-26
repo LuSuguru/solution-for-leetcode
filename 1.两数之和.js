@@ -10,7 +10,7 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function (nums, target) {
+const twoSum = function (nums, target) {
   const numMap = nums.reduce((prev, current, currentIndex) => {
     // +1 防止 0 的判断出现误差
     prev[current] = currentIndex + 1
@@ -37,6 +37,5 @@ var twoSum = function (nums, target) {
     }
   }
   return returnArr
-};
+}
 // @lc code=end
-

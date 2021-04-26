@@ -9,8 +9,7 @@
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function(s) {
+const longestPalindrome = function (s) {
 
-};
+}
 // @lc code=end
-
