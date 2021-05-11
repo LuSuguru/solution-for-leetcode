@@ -24,6 +24,7 @@ function levelOrder(root) {
   const list = []
   // 用个队列，存放子节点，记录节点深度
   const queue = [{ ...root }]
+  let depth = 0
 
   while (queue.length) {
     let { length } = queue
@@ -39,10 +40,6 @@ function levelOrder(root) {
         queue.push({ ...right })
       }
 
-      if (!list[length]) {
-        list[length] = []
-      }
-
       if (list[depth]) {
         list[depth].push(value)
       } else {
@@ -51,6 +48,7 @@ function levelOrder(root) {
 
       length--
     }
+    depth++
   }
 
   return list
