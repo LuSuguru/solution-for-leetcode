@@ -15,7 +15,6 @@ function longestPalindrome(s) {
       left--
       right++
     }
-    console.log(right, left)
     return right - left - 1
   }
 
