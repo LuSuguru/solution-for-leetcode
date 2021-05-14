@@ -9,15 +9,15 @@
  * @param {string} s
  * @return {string}
  */
-// function reverseWords(s) {
-//   const arr = s.match(/(?<=\s*)(\S+)/g)
+function reverseWords(s) {
+  const arr = s.match(/(?<=\s*)(\S+)/g)
 
-//   if (!arr.length) {
-//     return ''
-//   }
+  if (!arr.length) {
+    return ''
+  }
 
-//   return arr.reverse().join(' ')
-// }
+  return arr.reverse().join(' ')
+}
 
 function reverseWords(s) {
   let result = ''
