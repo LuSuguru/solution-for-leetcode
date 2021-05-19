@@ -14,20 +14,22 @@ function compress(chars) {
 
   let number = 0
   for (let i = 0, count = 1; i < length; i++, count++) {
-    const prev = chars[i - 1]
+    const next = chars[i + 1]
     const cur = chars[i]
 
-    if (prev !== cur || i === length) {
-      chars[number] = cur
-      chars[num]
+    if (next !== cur || i + 1 === length) {
+      chars[number++] = cur
 
-      prev = cur
-      number = i
-    } else {
-      number++
+      if (count > 1) {
+        const countStr = count + ''
+        for (let j = 0; j < countStr.length; j++) {
+          chars[number++] = countStr[j]
+        }
+      }
+      count = 0
     }
   }
 
-  return
+  return number
 }
 // @lc code=end
