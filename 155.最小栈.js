@@ -11,8 +11,6 @@
  * [155] 最小栈
  */
 
-const { CHAR_0 } = require('picomatch/constants')
-
 // @lc code=start
 /**
  * initialize your data structure here.

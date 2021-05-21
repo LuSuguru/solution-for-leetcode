@@ -22,8 +22,8 @@ function longestPalindrome(s) {
   let end = 0
 
   for (let i = 0; i < s.length; i++) {
-    const len1 = getcurrentPalindromeLength(s, i, i)
-    const len2 = getcurrentPalindromeLength(s, i, i + 1)
+    const len1 = getcurrentPalindromeLength(s, i, i) // 奇数从中间扩散向两边扩散
+    const len2 = getcurrentPalindromeLength(s, i, i + 1) // 偶数从中间两个数向两边扩散
 
     const len = Math.max(len1, len2)
 
