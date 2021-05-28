@@ -47,53 +47,53 @@ function sumNumbers(root) {
   return result
 }
 
-// // 递归，DFS
-// function sumNumbers(root) {
-//   const sum = (node, num) => {
-//     if (!node) {
-//       return 0
-//     }
+// 递归，DFS
+function sumNumbers(root) {
+  const sum = (node, num) => {
+    if (!node) {
+      return 0
+    }
 
-//     num = 10 * num + node.val
-//     if (!node.left && !node.right) {
-//       return num
-//     }
+    num = 10 * num + node.val
+    if (!node.left && !node.right) {
+      return num
+    }
 
-//     return sum(node.left, num) + sum(node.right, num)
-//   }
+    return sum(node.left, num) + sum(node.right, num)
+  }
 
-//   return sum(root, 0)
-// }
+  return sum(root, 0)
+}
 
-// // 队列，BFS
-// function sumNumbers(root) {
-//   if (!root) {
-//     return 0
-//   }
+// 队列，BFS
+function sumNumbers(root) {
+  if (!root) {
+    return 0
+  }
 
-//   let sum = 0
-//   const nodeQueue = [root]
-//   const numQueue = [root.val]
+  let sum = 0
+  const nodeQueue = [root]
+  const numQueue = [root.val]
 
-//   while (nodeQueue.length) {
-//     const node = nodeQueue.shift()
-//     const num = numQueue.shift()
+  while (nodeQueue.length) {
+    const node = nodeQueue.shift()
+    const num = numQueue.shift()
 
-//     if (!node.left && !node.right) {
-//       sum += num
-//     }
+    if (!node.left && !node.right) {
+      sum += num
+    }
 
-//     if (node.left) {
-//       nodeQueue.push(node.left)
-//       numQueue.push(num * 10 + node.left.val)
-//     }
+    if (node.left) {
+      nodeQueue.push(node.left)
+      numQueue.push(num * 10 + node.left.val)
+    }
 
-//     if (node.right) {
-//       nodeQueue.push(node.right)
-//       numQueue.push(num * 10 + node.right.val)
-//     }
-//   }
+    if (node.right) {
+      nodeQueue.push(node.right)
+      numQueue.push(num * 10 + node.right.val)
+    }
+  }
 
-//   return sum
-// }
+  return sum
+}
 // @lc code=end

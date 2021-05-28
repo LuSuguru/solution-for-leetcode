@@ -18,7 +18,7 @@
  * @param {number} targetSum
  * @return {boolean}
  */
-// 递归
+// 递归, DFS
 function hasPathSum(root, targetSum) {
   if (!root) {
     return false
@@ -32,7 +32,7 @@ function hasPathSum(root, targetSum) {
   return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val)
 }
 
-// 循环加队列
+// 循环加队列, BFS
 function hasPathSum(root, targetSum) {
   if (!root) {
     return false
