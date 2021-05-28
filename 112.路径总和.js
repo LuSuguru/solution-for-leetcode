@@ -45,7 +45,6 @@ function hasPathSum(root, targetSum) {
     const node = nodeQueue.shift()
     const num = numQueue.shift()
 
-    console.log(node, num)
     if (!node.left && !node.right) {
       if (node.val === num) {
         return true
