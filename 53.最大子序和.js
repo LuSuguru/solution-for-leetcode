@@ -48,18 +48,18 @@ const maxSubArray = function (nums) {
   return Math.max(leftMaxSum, rightMaxSum, maxBorderLeftSum + maxBorderRightNum)
 }
 
-// 动态规划
-// const maxSubArray = function (nums) {
-//   // dp 存储计算过数组的最小值
-//   const dp = [nums[0]]
-//   let maxNum = dp[0]
+动态规划
+const maxSubArray = function (nums) {
+  // dp 存储计算过数组的最小值
+  const dp = [nums[0]]
+  let maxNum = dp[0]
 
-//   for (let i = 1; i < nums.length; i++) {
-//     dp[i] = Math.max(nums[i], dp[i - 1] + nums[i])
+  for (let i = 1; i < nums.length; i++) {
+    dp[i] = Math.max(nums[i], dp[i - 1] + nums[i])
 
-//     maxNum = Math.max(maxNum, dp[i])
-//   }
+    maxNum = Math.max(maxNum, dp[i])
+  }
 
-//   return maxNum
-// }
+  return maxNum
+}
 // @lc code=end
