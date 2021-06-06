@@ -51,10 +51,10 @@ function permute(nums) {
         getArr(arr, temp)
       }
     }
-
-    getArr(nums)
-    return result
   }
+
+  getArr(nums)
+  return result
 }
 
 // 回溯法
