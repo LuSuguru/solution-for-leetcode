@@ -48,7 +48,7 @@ const maxSubArray = function (nums) {
   return Math.max(leftMaxSum, rightMaxSum, maxBorderLeftSum + maxBorderRightNum)
 }
 
-动态规划
+//动态规划
 const maxSubArray = function (nums) {
   // dp 存储计算过数组的最小值
   const dp = [nums[0]]
