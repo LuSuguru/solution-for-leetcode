@@ -23,7 +23,7 @@ function rightSideView(root) {
 
   const result = []
   const dfs = (node = root, depth = 0) => {
-    if (!node) return
+    if (!node) return []
 
     if (!result[depth]) {
       result.push(node.val)
