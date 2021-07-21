@@ -27,7 +27,7 @@ const MinStack = function () {
 MinStack.prototype.push = function (val) {
   this.stack.push(val)
   const min = this.minStack[0]
-  console.log(val, min)
+
   if (min === undefined || val <= min) {
     this.minStack.unshift(val)
   }
