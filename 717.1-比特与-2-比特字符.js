@@ -25,6 +25,7 @@ function isOneBitCharacter(bits) {
   return i === bits.length - 1
 }
 
+// 当数组中有0时，说明前面一定是可以解析的，所以只要保证最后1个0之前有偶数个1，说明最后一位一定可以解析成 1 比特
 function isOneBitCharacter(bits) {
   let i = bits.length - 2
 
