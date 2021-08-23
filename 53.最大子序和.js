@@ -49,8 +49,8 @@ const maxSubArray = function (nums) {
 }
 
 //动态规划
-const maxSubArray = function (nums) {
-  // dp 存储计算过数组的最小值
+function maxSubArray(nums) {
+  // dp 存储计算过数组的最大值
   const dp = [nums[0]]
   let maxNum = dp[0]
 
