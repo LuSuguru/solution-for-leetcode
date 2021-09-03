@@ -80,7 +80,11 @@ function reverseKGroup(head, k) {
   }
 
   // 创造一个头结点，用来做最后的头定位，非常的巧妙
-  const hair = new ListNode(0);
+  const hair = {
+    val: 0,
+    next: null
+  };
+
   hair.next = head;
   let pre = hair;
 
@@ -93,11 +97,11 @@ function reverseKGroup(head, k) {
         return hair.next;
       }
     }
-    const nex = tail.next;
+
     [head, tail] = myReverse(head, tail);
-    // 把子链表重新接回原链表
+
     pre.next = head;
-    tail.next = nex;
+
     pre = tail;
     head = tail.next;
   }
