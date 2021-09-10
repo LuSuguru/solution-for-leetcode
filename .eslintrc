@@ -73,6 +73,7 @@
     "import/extensions": 0,
     "no-use-before-define": 0,
     "jsx-a11y/mouse-events-have-key-events": 0,
+    "prefer-destructuring": 0,
     "semi": [
       "error",
       "never"
