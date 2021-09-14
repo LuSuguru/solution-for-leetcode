@@ -9,6 +9,8 @@
  * @param {number} n
  * @return {string[]}
  */
+
+// dfs
 function generateParenthesis(n) {
   if (n === 1) {
     return ['()']
