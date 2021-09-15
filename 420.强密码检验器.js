@@ -52,28 +52,22 @@ function strongPasswordChecker(password) {
     return 0
   }
 
-  // 需要增加的字符种类，可以通过insert或update
-  const needChangeByKind = 3 - kind
-
   if (length >= 6 && length <= 20) {
     // 数量满足要求只需要update即可
-    // needChangeByContinuous=continuous/3
     const needChangeByContinuous = continuousList.reduce((pre, continuous) => pre += Math.floor(continuous / 3), 0)
-    return Math.max(needChangeByContinuous, needChangeByKind)
+    return Math.max(needChangeByContinuous, 3 - kind)
   }
 
-  if (length < 6) {
-    // 需要insert
-    const needInsert = 6 - length
-    // 1. 如果需要插入2个或2个以上，仅考虑插入的数量就可以满足密码要求
-    // 2. 如果只需要插入1个，以下两种情况需要insert一次，update一次，其它情况均只需要操作1次：
-    //      a. 连续五个相同的字母
-    //      b. 虽然不是五个相同的字母，但是字符种类只有一种
-    // 综上： 如果只需要插入1个字母，且字符种类只有一种时需要操作2次。其它情况均只需要考虑需要插入的个数即可
-    if (needInsert == 1 && needChangeByKind == 2) {
-      return 2
-    }
-    return needInsert
+  if (length < 5) {
+    return 6 - length
+  }
+
+  // 如果只需要插入1个，以下两种情况需要insert一次，update一次，其它情况均只需要操作1次：
+  //  a. 连续五个相同的字母
+  //  b. 虽然不是五个相同的字母，但是字符种类只有一种
+  // 综上： 如果只需要插入1个字母，且字符种类只有一种时需要操作2次。其它情况均只需要考虑需要插入的个数即可
+  if (length === 5) {
+    return Math.max(3 - kind, 1)
   }
 
   // 需要delete
@@ -83,7 +77,7 @@ function strongPasswordChecker(password) {
   const needDeleteByContinuous = continuousList.reduce((pre, continuous) => pre += (continuous - 2), 0)
 
   if (needDelete >= needDeleteByContinuous) {
-    return needDelete + needChangeByKind
+    return needDelete + (3 - kind)
   }
 
   // 2.仅通过删除无法解决多个字符连续的问题，那么就需要删除连续字符，使得需要替换的字符数量最少
@@ -128,7 +122,7 @@ function strongPasswordChecker(password) {
   // 经过以上删除步骤后，remain可能为0，1，2但这都不影响结果
   const needChangeByContinuous = continuousList.reduce((pre, continuous) => pre += Math.floor(continuous / 3), 0)
 
-  return needDelete + Math.max(needChangeByContinuous, needChangeByKind)
+  return needDelete + Math.max(needChangeByContinuous, 3 - kind)
 }
 
 // @lc code=end
