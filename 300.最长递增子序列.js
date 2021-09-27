@@ -33,7 +33,7 @@ function lengthOfLIS(nums) {
   let res = 1
   let { length } = nums
 
-  // 表示长度为 ii 的最长上升子序列的末尾元素的最小值，用 \textit{len}len 记录目前最长上升子序列的长度
+  // 表示长度为 ii 的最长上升子序列的末尾元素的最小值，用 len 记录目前最长上升子序列的长度
   let dp = new Array(length + 1)
   dp[res] = nums[0]
 
