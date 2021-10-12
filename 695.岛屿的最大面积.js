@@ -28,10 +28,10 @@ function maxAreaOfIsland(grid) {
     cur++
     grid[i][j] = 0
 
-    cur += bfs(i - 1, j)
-    cur += bfs(i + 1, j)
-    cur += bfs(i, j - 1)
-    cur += bfs(i, j + 1)
+    cur += dfs(i - 1, j)
+    cur += dfs(i + 1, j)
+    cur += dfs(i, j - 1)
+    cur += dfs(i, j + 1)
     return cur
   }
 
