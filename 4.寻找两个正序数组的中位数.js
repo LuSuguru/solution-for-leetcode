@@ -9,7 +9,7 @@
  * @param {number[]} nums2
  * @return {number}
  */
-const findMedianSortedArrays = function (nums1, nums2) {
+function findMedianSortedArrays(nums1, nums2) {
   // 插入特定元素到有序数组特定位置
   function insertNumToArr(num, nums1) {
     // 小于20，暴力求解
@@ -104,7 +104,7 @@ const findMedianSortedArrays = function (nums1, nums2) {
 
 // 找两个数组中第K个元素，O(log (m+n))
 // 巧妙利用 n+m+1,n+m+2
-const findMedianSortedArrays = function (nums1, nums2) {
+function findMedianSortedArrays(nums1, nums2) {
   // i: nums1的起始位置 j: nums2的起始位置
   const findKth = (nums1, i, nums2, j, k) => {
     if (i >= nums1.length) return nums2[j + k - 1]// nums1为空数组
@@ -129,6 +129,6 @@ const findMedianSortedArrays = function (nums1, nums2) {
   const n = nums2.length
   const left = Math.floor((m + n + 1) / 2)
   const right = Math.floor((m + n + 2) / 2)
-  return (findKth(nums1, 0, nums2, 0, left) + findKth(nums1, 0, nums2, 0, right)) / 2.0
+  return (findKth(nums1, 0, nums2, 0, left) + findKth(nums1, 0, nums2, 0, right)) / 2
 }
 // @lc code=end
