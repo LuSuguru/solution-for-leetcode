@@ -51,6 +51,33 @@ function searchMatrix(matrix, target) {
   return search(0, matrix.length - 1, 0, matrix[0].length - 1)
 }
 
+// 二分搜索
+function searchMatrix(matrix, target) {
+  const search = (left, up, right, down) => {
+    if (left > right || up > down) {
+      return false
+    } if (target < matrix[up][left] || target > matrix[down][right]) {
+      return false
+    }
+
+    const mid = left + Math.floor((right - left) / 2)
+    let row = up
+    while (row <= down && matrix[row][mid] <= target) {
+      if (matrix[row][mid] === target) {
+        return true
+      }
+      row++
+    }
+    return search(left, row, mid - 1, down) || search(mid + 1, up, right, row - 1)
+  }
+
+  if (matrix == null || matrix.length == 0) {
+    return false
+  }
+
+  return search(0, 0, matrix[0].length - 1, matrix.length - 1)
+}
+
 function searchMatrix(matrix, target) {
   if (matrix === null || matrix.length === 0) return false
 
