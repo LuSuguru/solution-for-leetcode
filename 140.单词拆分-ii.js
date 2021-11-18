@@ -10,6 +10,7 @@
  * @param {string[]} wordDict
  * @return {string[]}
  */
+// 回溯
 function wordBreak(s, wordDict) {
   const wordDictMap = {}
   let min = Number.MAX_SAFE_INTEGER
@@ -47,4 +48,26 @@ function wordBreak(s, wordDict) {
   return result
 }
 
+// 动态规划
+function wordBreak(s, wordDict) {
+  const dp = Array(s.length + 1).fill(0).map(() => [])
+  const wordSet = new Set(wordDict)
+
+  dp[0] = ['']
+  for (let i = 1; i <= s.length; i++) {
+    for (let j = i - 1; j >= 0; j--) {
+      if (dp[j].length === 0) continue
+
+      const suffix = s.slice(j, i)
+
+      if (wordSet.has(suffix) && dp[j].length) {
+        dp[j].forEach(s => {
+          dp[i].push(s + (j === 0 ? '' : ' ') + suffix)
+        })
+      }
+    }
+  }
+
+  return dp[s.length]
+}
 // @lc code=end
