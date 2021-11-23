@@ -46,6 +46,7 @@ function buildTree(preorder, inorder) {
   // 用值做key，数组位置做value创建一个map，便于查找
   const map = {}
   const { length } = inorder
+  
   for (let i = 0; i < length; i++) {
     map[inorder[i]] = i
   }
