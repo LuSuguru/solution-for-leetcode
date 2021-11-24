@@ -30,7 +30,7 @@ function carPooling(trips, capacity) {
       currentPassengers -= inTheCar.shift()[0]
     }
 
-    // 更细当前车上数量
+    // 更新当前车上数量
     currentPassengers += passengers
 
     if (currentPassengers > capacity) {
