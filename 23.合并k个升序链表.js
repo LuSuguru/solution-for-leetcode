@@ -18,82 +18,82 @@
  * @return {ListNode}
  */
 // 堆
-// function mergeKLists(lists) {
-//   const heap = new Heap()
-//   const head = {
-//     val: 0,
-//     next: null
-//   }
-//   let tail = head
+function mergeKLists(lists) {
+  const heap = new Heap()
+  const head = {
+    val: 0,
+    next: null
+  }
+  let tail = head
 
-//   for (let i = 0; i < lists.length; i++) {
-//     if (lists[i]) {
-//       heap.insert(lists[i])
-//     }
-//   }
+  for (let i = 0; i < lists.length; i++) {
+    if (lists[i]) {
+      heap.insert(lists[i])
+    }
+  }
 
-//   while (!heap.isEmpty()) {
-//     const node = heap.deleteMin()
-//     tail.next = node
-//     tail = tail.next
+  while (!heap.isEmpty()) {
+    const node = heap.deleteMin()
+    tail.next = node
+    tail = tail.next
 
-//     if (node.next !== null) {
-//       heap.insert(node.next)
-//     }
-//   }
+    if (node.next !== null) {
+      heap.insert(node.next)
+    }
+  }
 
-//   return head.next
-// }
+  return head.next
+}
 
-// class Heap {
-//   constructor() {
-//     this.heap = [{ val: Number.MIN_SAFE_INTEGER }]
-//   }
+class Heap {
+  constructor() {
+    this.heap = [{ val: Number.MIN_SAFE_INTEGER }]
+  }
 
-//   insert(node) {
-//     const { heap } = this
+  insert(node) {
+    const { heap } = this
 
-//     if (heap.length === 1) {
-//       heap.push(node)
-//       return
-//     }
+    if (heap.length === 1) {
+      heap.push(node)
+      return
+    }
 
-//     let i = heap.length
-//     while (heap[~~(i / 2)].val > node.val) {
-//       heap[i] = heap[~~(i / 2)]
-//       i = ~~(i / 2)
-//     }
-//     heap[i] = node
-//   }
+    let i = heap.length
+    while (heap[~~(i / 2)].val > node.val) {
+      heap[i] = heap[~~(i / 2)]
+      i = ~~(i / 2)
+    }
+    heap[i] = node
+  }
 
-//   isEmpty() {
-//     return this.heap.length === 1
-//   }
+  isEmpty() {
+    return this.heap.length === 1
+  }
 
-//   deleteMin() {
-//     const { heap } = this
-//     const min = heap[1]
-//     const last = heap[heap.length - 1]
+  deleteMin() {
+    const { heap } = this
+    const min = heap[1]
+    const last = heap[heap.length - 1]
 
-//     let i = 1
-//     let child
-//     for (i = 1; i * 2 < heap.length; i = child) {
-//       child = i * 2
-//       if (child !== heap.length && heap[child + 1]?.val < heap[child]?.val) {
-//         child++
-//       }
+    let i = 1
+    let child
+    for (i = 1; i * 2 < heap.length; i = child) {
+      child = i * 2
+      if (child !== heap.length && heap[child + 1]?.val < heap[child]?.val) {
+        child++
+      }
 
-//       if (last.val > heap[child].val) {
-//         heap[i] = heap[child]
-//       } else {
-//         break
-//       }
-//     }
-//     heap[i] = last
-//     heap.pop()
-//     return min
-//   }
-// }
+      if (last.val > heap[child].val) {
+        heap[i] = heap[child]
+      } else {
+        break
+      }
+    }
+    heap[i] = last
+    heap.pop()
+    return min
+  }
+}
 
 // 分治
 function mergeKLists(lists) {
