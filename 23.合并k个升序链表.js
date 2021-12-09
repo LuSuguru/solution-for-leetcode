@@ -59,9 +59,9 @@ class Heap {
     }
 
     let i = heap.length
-    while (heap[~~(i / 2)].val > node.val) {
-      heap[i] = heap[~~(i / 2)]
-      i = ~~(i / 2)
+    while (heap[i >> 1].val > node.val) {
+      heap[i] = heap[i >> 1]
+      i >>= 1
     }
     heap[i] = node
   }
