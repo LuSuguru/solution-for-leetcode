@@ -21,7 +21,7 @@ function jobScheduling(startTime, endTime, profit) {
   dp[0] = nodes[0][2]
 
   for (let i = 1; i < startTime.length; i++) {
-    // pre[i]表示i号工作之前最近能做的工作
+    // pre表示i号工作之前最近能做的工作
     const pre = binarySearch(nodes, i)
     dp[i] = Math.max(dp[i - 1], (pre >= 0 ? dp[pre] : 0) + nodes[i][2])
   }
