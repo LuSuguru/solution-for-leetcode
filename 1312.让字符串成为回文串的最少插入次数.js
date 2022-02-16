@@ -10,6 +10,7 @@
  * @return {number}
  */
 function minInsertions(s) {
+  // 将 字符串倒序，找公共子序列，字符串长度 - 公共子序列  = 需要插入的字符
   const { length } = s
 
   const dp = new Array(length + 1)
