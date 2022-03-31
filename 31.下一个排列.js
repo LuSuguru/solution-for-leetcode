@@ -25,7 +25,6 @@ function nextPermutation(nums) {
       for (let j = nums.length - 1; j > k; j--) {
         // 从右往左找到大于目标数的最小值，由于是倒序
         if (nums[j] > nums[k]) {
-          console.log(nums[j], nums[k])
           const target = nums[j]
           nums[j] = nums[k]
           nums[k] = target
