@@ -10,25 +10,18 @@
  * @return {number}
  */
 function firstUniqChar(s) {
-  const memo = new Array(26)
+  const memo = new Array(26).fill(0)
 
   for (let i = 0; i < s.length; i++) {
-    const code = s[i].charCodeAt() - 'a'.charCodeAt()
+    memo[s[i].charCodeAt() - 'a'.charCodeAt()]++
+  }
 
-    if (memo[code]) {
-      memo[code].push(i)
-    } else {
-      memo[code] = [i]
+  for (let i = 0; i < s.length; i++) {
+    if (memo[s[i].charCodeAt() - 'a'.charCodeAt()] === 1) {
+      return i
     }
   }
 
-  let res = Number.MAX_SAFE_INTEGER
-  for (let i = 0; i < memo.length; i++) {
-    if (memo[i]?.length === 1) {
-      res = Math.min(memo[i][0], res)
-    }
-  }
-
-  return res === Number.MAX_SAFE_INTEGER ? -1 : res
+  return -1
 }
 // @lc code=end
