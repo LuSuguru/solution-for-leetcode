@@ -46,10 +46,10 @@ function subarraysDivByK(nums, k) {
   let sum = 0
   let result = 0
 
-  // (sums[i] -sums[j])%k == 0 
-  // => sums[i]%k - sums[j]%k == 0  
-  // => sums[i]%k === sums[j]%k
-  // 以 sum[i]%K 作为键值统计其出现的频率，从而对于每个下标 j 可以立即获得能和它组成满足要求的子数组的开始下标 i 的数量
+  // (sums[i] -sums[j]) % k == 0 
+  // => sums[i] % k - sums[j] % k == 0  
+  // => sums[i] % k === sums[j] % k
+  // 以 sum[i] % K 作为键值统计其出现的频率，从而对于每个下标 j 可以立即获得能和它组成满足要求的子数组的开始下标 i 的数量
   const map = {}
   map[0] = 1
 
