@@ -2,11 +2,6 @@
  * @param {number} target
  * @return {number[][]}
  */
-
-// 9
-// [[2,3,4],[4,5]]
-// 15
-// [[1,2,3,4,5],[4,5,6],[7,8]]
 function findContinuousSequence(target) {
   const result = []
 
