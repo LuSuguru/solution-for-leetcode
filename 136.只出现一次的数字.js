@@ -30,7 +30,7 @@ function singleNumber(nums) {
 
 // 位运算
 // 1. 交换律：a ^ b ^ c <=> a ^ c ^ b
-// 2. 任何数于0异或为任何数 0 ^ n => n
+// 2. 任何数与 0 异或为任何数 0 ^ n => n
 // 3. 相同的数异或为0: n ^ n => 0
 function singleNumber(nums) {
   let result = 0
