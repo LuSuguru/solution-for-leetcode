@@ -36,7 +36,7 @@ function findCircleNum(isConnected) {
   return result
 }
 
-// // 并查集
+// 并查集
 function findCircleNum(isConnected) {
   const { length } = isConnected
   const parent = new Array(length).fill(0).map((_, index) => index)
