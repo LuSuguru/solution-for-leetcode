@@ -10,48 +10,39 @@
  * @return {boolean}
  */
 
-function TreeNode(val) {
-  this.val = val
-  this.left = null
-  this.right = null
-}
-
 // 我的憨憨解封
 function isValidSerialization(preorder) {
   const strArr = preorder.split(',')
 
   if (strArr.length % 2 === 0) return false
 
-  const stack = [new TreeNode(strArr.shift())]
+  let i = 0
+  const stack = [[strArr[i++], null, null]]
 
   while (stack.length) {
     const node = stack[stack.length - 1]
 
-    if ((node.left && node.right) || node.val === '#') {
+    if ((node[1] && node[2]) || node[0] === '#') {
       stack.pop()
       continue
     }
 
-    if (strArr.length === 0) {
+    if (i >= strArr.length) {
       return false
     }
 
-    if (!node.left) {
-      const val = strArr.shift()
-      const newNode = new TreeNode(val)
+    const newNode = [strArr[i++], null, null]
 
-      node.left = newNode
-      stack.push(newNode)
+    if (!node[1]) {
+      node[1] = newNode
     } else {
-      const val = strArr.shift()
-      const newNode = new TreeNode(val)
-
-      node.right = newNode
-      stack.push(newNode)
+      node[2] = newNode
     }
+
+    stack.push(newNode)
   }
 
-  return stack.length === 0 && strArr.length === 0
+  return stack.length === 0 && i === strArr.length
 }
 
 // 插槽加栈优化
