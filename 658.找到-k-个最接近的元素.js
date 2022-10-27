@@ -12,8 +12,6 @@
  * @return {number[]}
  */
 function findClosestElements(arr, k, x) {
-  const { length } = arr
-
   let left = 0
   let right = arr.length - 1
   while (left < right) {
