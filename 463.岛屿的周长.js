@@ -15,11 +15,7 @@ function islandPerimeter(grid) {
 
   let result = 0
   const dfs = (i, j) => {
-    if (i < 0 || i > m - 1 || j < 0 || j > n - 1) {
-      return 1
-    }
-
-    if (grid[i][j] === 0) {
+    if (i < 0 || i > m - 1 || j < 0 || j > n - 1 || grid[i][j] === 0) {
       return 1
     }
 
