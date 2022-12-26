@@ -21,7 +21,7 @@ function convertToTitle(columnNumber) {
   result = String.fromCharCode(startCharCode + columnNumber) + result
 
   return result
-// }
+}
 
 function convertToTitle(columnNumber) {
   let result = ''
